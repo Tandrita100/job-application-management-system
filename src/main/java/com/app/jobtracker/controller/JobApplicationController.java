@@ -2,10 +2,9 @@ package com.app.jobtracker.controller;
 
 import com.app.jobtracker.entity.JobApplication;
 import com.app.jobtracker.service.JobApplicationService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/jobs")
@@ -22,4 +21,13 @@ public class JobApplicationController {
         return jobApplicationService.addJobApplication(jobApplication);
     }
 
+    @GetMapping
+    public List<JobApplication> findAllApplication(){
+        return jobApplicationService.findAllApplications();
+    }
+
+    @GetMapping("/{id}")
+    public JobApplication findById( Long id){
+        return jobApplicationService.getJobApplicationById(id);
+    }
 }
