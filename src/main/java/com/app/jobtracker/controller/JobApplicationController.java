@@ -27,7 +27,17 @@ public class JobApplicationController {
     }
 
     @GetMapping("/{id}")
-    public JobApplication findById( Long id){
+    public JobApplication findJobApplicationById(@PathVariable Long id){
         return jobApplicationService.getJobApplicationById(id);
+    }
+
+    @PutMapping("/{id}")
+    public JobApplication updateJobApplicationById(@PathVariable Long id, @RequestBody JobApplication updateJobApplication){
+        return jobApplicationService.updateJobApplication(id,updateJobApplication);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteJobApplicationById(@PathVariable Long id){
+        jobApplicationService.deleteJobApplication(id);
     }
 }
