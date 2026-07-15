@@ -1,6 +1,8 @@
 package com.app.jobtracker.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 
@@ -11,14 +13,20 @@ public class JobApplication {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
     private String company;
+    @NotBlank
     private String position;
+    @NotBlank
     private String platform;
     @Enumerated(EnumType.STRING)
+    @NotNull
     private JobType jobType;
     private String location;
+    @NotNull
     private LocalDate appliedDate;
     @Enumerated(EnumType.STRING)
+    @NotNull
     private JobStatus jobStatus;
     private String notes;
 

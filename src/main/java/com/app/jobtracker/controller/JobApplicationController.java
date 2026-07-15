@@ -2,6 +2,7 @@ package com.app.jobtracker.controller;
 
 import com.app.jobtracker.entity.JobApplication;
 import com.app.jobtracker.service.JobApplicationService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class JobApplicationController {
     }
 
     @PostMapping
-    public JobApplication addJobApplication(@RequestBody JobApplication jobApplication){
+    public JobApplication addJobApplication(@Valid @RequestBody JobApplication jobApplication){
         return jobApplicationService.addJobApplication(jobApplication);
     }
 
