@@ -1,13 +1,27 @@
 package com.app.jobtracker.controller;
 
+import com.app.jobtracker.entity.JobApplication;
+import com.app.jobtracker.service.JobApplicationService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 @Controller
 public class JobApplicationController {
 
+    private final JobApplicationService jobApplicationService;
+
+    public JobApplicationController(JobApplicationService jobApplicationService){
+        this.jobApplicationService = jobApplicationService;
+    }
+
     @GetMapping("/")
-    public String home(){
+    public String home(Model model){
+        List<JobApplication> jobs = jobApplicationService.findAllApplications();
+        model.addAttribute("jobs", jobs);
+        model.addAttribute("message", "welcome to job tracker");
         return "home";
     }
 }

@@ -4,6 +4,17 @@
     <title>Welcome to the HTML webpage</title>
 </head>
 <body>
-<h1>Hello</h1>
+<table border="1">
+    <tr>
+        <th>Company</th>
+        <th>Position</th>
+        <th>Location</th>
+    </tr>
+    <tr th:each="job : ${jobs}">
+        <td th:text="${job.company}"></td>
+        <td th:text="${job.position}"></td>
+        <td th:text="${job.location}"></td>
+    </tr>
+</table>
 </body>
 </html>
