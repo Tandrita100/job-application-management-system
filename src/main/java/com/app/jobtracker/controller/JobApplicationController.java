@@ -21,7 +21,6 @@ public class JobApplicationController {
     public String home(Model model){
         List<JobApplication> jobs = jobApplicationService.findAllApplications();
         model.addAttribute("jobs", jobs);
-        model.addAttribute("message", "welcome to job tracker");
         return "home";
     }
 }

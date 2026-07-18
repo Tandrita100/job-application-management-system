@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Welcome to the HTML webpage</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<table border="1">
-    <tr>
-        <th>Company</th>
-        <th>Position</th>
-        <th>Location</th>
-    </tr>
-    <tr th:each="job : ${jobs}">
-        <td th:text="${job.company}"></td>
-        <td th:text="${job.position}"></td>
-        <td th:text="${job.location}"></td>
-    </tr>
-</table>
+<div class="container">
+    <h1>Job Application Tracker</h1>
+    <table>
+        <tr>
+            <th>Company</th>
+            <th>Position</th>
+            <th>Location</th>
+        </tr>
+        <tr th:each="job : ${jobs}">
+            <td th:text="${job.company}"></td>
+            <td th:text="${job.position}"></td>
+            <td th:text="${job.location}"></td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
