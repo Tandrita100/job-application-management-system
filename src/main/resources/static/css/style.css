@@ -8,10 +8,23 @@ body{
     margin: 40px auto;
 }
 
-.h1{
+h1{
     text-align: center;
     color: #333;
     margin-bottom: 20px;
+}
+
+.btn{
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    background-color: #218838;
 }
 
 table{
@@ -34,3 +47,4 @@ th{
     background-color: #007bff;
     color: white;
 }
+

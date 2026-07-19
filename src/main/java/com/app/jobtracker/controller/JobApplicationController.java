@@ -23,4 +23,9 @@ public class JobApplicationController {
         model.addAttribute("jobs", jobs);
         return "home";
     }
+
+    @GetMapping("/add-job")
+    public String addJobPage(){
+        return "add-job";
+    }
 }
