@@ -3,6 +3,7 @@ package com.app.jobtracker.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -24,6 +25,7 @@ public class JobApplication {
     private JobType jobType;
     private String location;
     @NotNull
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate appliedDate;
     @Enumerated(EnumType.STRING)
     @NotNull

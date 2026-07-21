@@ -4,9 +4,7 @@ import com.app.jobtracker.entity.JobApplication;
 import com.app.jobtracker.service.JobApplicationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -37,5 +35,22 @@ public class JobApplicationController {
     public String saveJob(@ModelAttribute JobApplication jobApplication){
         jobApplicationService.addJobApplication(jobApplication);
         return "redirect:/";
+    }
+
+    @GetMapping("/delete-job/{id}")
+    public String deleteJob(@PathVariable Long id){
+        jobApplicationService.deleteJobApplication(id);
+        return "redirect:/";
+    }
+
+    @GetMapping("/edit-job/{id}")
+    public String editJob(@PathVariable Long id, Model model){
+        JobApplication jobApplication = jobApplicationService.getJobApplicationById(id);
+        if(jobApplication==null){
+            return "redirect:/";
+        }
+
+        model.addAttribute("jobApplication", jobApplication);
+        return "add-job";
     }
 }

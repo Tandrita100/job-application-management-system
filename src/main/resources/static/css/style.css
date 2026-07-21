@@ -3,48 +3,12 @@ body{
     font-family: Arial,sans-serif;
 }
 
-.container{
-    width: 80%;
-    margin: 40px auto;
-}
-
 h1{
     text-align: center;
     color: #333;
     margin-bottom: 20px;
 }
 
-.btn{
-    display: inline-block;
-    background-color: #28a745;
-    color: white;
-    text-decoration: none;
-    padding: 10px 16px;
-    border-radius: 5px;
+.action-btn{
+    min-width: 70px;
 }
-
-.btn:hover{
-    background-color: #218838;
-}
-
-table{
-    font-size: 16px;
-    border : 1px solid black;
-    border-collapse: collapse;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 70%;
-}
-
-th,td{
-    border : 1px solid black;
-    padding: 8px;
-}
-
-th{
-    text-align: left;
-    background-color: #007bff;
-    color: white;
-}
-

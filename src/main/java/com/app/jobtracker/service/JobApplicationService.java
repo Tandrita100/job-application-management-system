@@ -48,12 +48,9 @@ public class JobApplicationService {
     }
 
     public void deleteJobApplication(Long id){
-        JobApplication existingJobApplication = jobApplicationRepository.findById(id).orElse(null);
-
-        if(existingJobApplication == null){
+        if(!jobApplicationRepository.existsById(id)){
             return;
         }
-
         jobApplicationRepository.deleteById(id);
     }
 }
