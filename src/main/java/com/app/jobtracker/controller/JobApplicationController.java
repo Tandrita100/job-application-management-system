@@ -2,8 +2,10 @@ package com.app.jobtracker.controller;
 
 import com.app.jobtracker.entity.JobApplication;
 import com.app.jobtracker.service.JobApplicationService;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,7 +34,10 @@ public class JobApplicationController {
     }
 
     @PostMapping("/save-job")
-    public String saveJob(@ModelAttribute JobApplication jobApplication){
+    public String saveJob(@Valid @ModelAttribute JobApplication jobApplication, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "add-job";
+        }
         jobApplicationService.addJobApplication(jobApplication);
         return "redirect:/";
     }

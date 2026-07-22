@@ -3,6 +3,7 @@ package com.app.jobtracker.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -14,21 +15,26 @@ public class JobApplication {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
+    @NotBlank(message = "company is required")
+    @Pattern(regexp="^$|.*[A-Za-z].*", message="company must contain at least one letter")
     private String company;
-    @NotBlank
+    @NotBlank(message = "position is required")
+    @Pattern(regexp="^$|.*[A-Za-z].*", message="position must contain at least one letter")
     private String position;
-    @NotBlank
+    @NotBlank(message = "platform is required")
+    @Pattern(regexp="^$|.*[A-Za-z].*", message="platform must contain at least one letter")
     private String platform;
     @Enumerated(EnumType.STRING)
-    @NotNull
+    @NotNull(message = "jobType is required")
     private JobType jobType;
+    @NotBlank(message = "location is required")
+    @Pattern(regexp="^$|.*[A-Za-z].*", message="location must contain at least one letter")
     private String location;
-    @NotNull
+    @NotNull(message = "appliedDate is required")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate appliedDate;
     @Enumerated(EnumType.STRING)
-    @NotNull
+    @NotNull(message = "company is required")
     private JobStatus jobStatus;
     private String notes;
 

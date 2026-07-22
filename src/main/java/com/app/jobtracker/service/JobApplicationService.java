@@ -2,6 +2,7 @@ package com.app.jobtracker.service;
 
 import com.app.jobtracker.entity.JobApplication;
 import com.app.jobtracker.repository.JobApplicationRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -21,7 +22,9 @@ public class JobApplicationService {
     }
 
     public List<JobApplication> findAllApplications(){
-        return jobApplicationRepository.findAll();
+        return jobApplicationRepository.findAll(
+                Sort.by(Sort.Direction.DESC,"appliedDate")
+        );
     }
 
     public JobApplication getJobApplicationById(Long id){
