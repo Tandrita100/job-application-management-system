@@ -9,8 +9,11 @@
 <body class="bg-light">
 <div class="container mt-5">
     <h1 class="text-center mb-4">Add New Job</h1>
-    <div class="card shadow">
-        <div class="card-body">
+    <p class="text-center text-muted mb-4">
+        Fill in the details below to add a new job application.
+    </p>
+    <div class="card shadow-lg border-0">
+        <div class="card-body p-4">
             <form th:action="@{/save-job}" method="post" th:object="${jobApplication}">
                 <input type="hidden" th:field="*{id}">
                 <div class="mb-3">
@@ -68,11 +71,11 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Notes</label>
-                    <textarea class="form-control" rows="4" th:field="*{notes}"></textarea>
+                    <textarea class="form-control" rows="3" th:field="*{notes}"></textarea>
                 </div>
                 <div class="d-flex justify-content-end gap-2">
-                    <a th:href="@{/}" class="btn btn-secondary">Cancel</a>
-                    <button type="submit" class="btn btn-success">Save Job</button>
+                    <a th:href="@{/}" class="btn btn-secondary px-4">Cancel</a>
+                    <button type="submit" class="btn btn-success px-4">Save Job</button>
                 </div>
             </form>
         </div>
