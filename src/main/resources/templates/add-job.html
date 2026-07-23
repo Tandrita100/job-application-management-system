@@ -19,17 +19,20 @@
                 <div class="mb-3">
                     <label class="form-label">Company<span class="text-danger">*</span></label>
                     <input type="text" class="form-control" th:field="*{company}">
-                    <div class="text-danger small mt-1" th:if="${#fields.hasErrors('company')}" th:errors="*{company}"></div>
+                    <div class="text-danger small mt-1" th:if="${#fields.hasErrors('company')}"
+                         th:errors="*{company}"></div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Position<span class="text-danger">*</span></label>
                     <input type="text" class="form-control" th:field="*{position}">
-                    <div class="text-danger small mt-1" th:if="${#fields.hasErrors('position')}" th:errors="*{position}"></div>
+                    <div class="text-danger small mt-1" th:if="${#fields.hasErrors('position')}"
+                         th:errors="*{position}"></div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Platform<span class="text-danger">*</span></label>
                     <input type="text" class="form-control" th:field="*{platform}">
-                    <div class="text-danger small mt-1" th:if="${#fields.hasErrors('platform')}" th:errors="*{platform}"></div>
+                    <div class="text-danger small mt-1" th:if="${#fields.hasErrors('platform')}"
+                         th:errors="*{platform}"></div>
 
                 </div>
                 <div class="mb-3">
@@ -39,12 +42,14 @@
                         <option value="HYBRID">HYBRID</option>
                         <option value="ONSITE">ONSITE</option>
                     </select>
-                    <div class="text-danger small mt-1" th:if="${#fields.hasErrors('jobType')}" th:errors="*{jobType}"></div>
+                    <div class="text-danger small mt-1" th:if="${#fields.hasErrors('jobType')}"
+                         th:errors="*{jobType}"></div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Location<span class="text-danger">*</span></label>
                     <input type="text" class="form-control" th:field="*{location}">
-                    <div class="text-danger small mt-1" th:if="${#fields.hasErrors('location')}" th:errors="*{location}"></div>
+                    <div class="text-danger small mt-1" th:if="${#fields.hasErrors('location')}"
+                         th:errors="*{location}"></div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Applied Date<span class="text-danger">*</span></label>
@@ -71,7 +76,8 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Notes</label>
-                    <textarea class="form-control" rows="3" th:field="*{notes}"></textarea>
+                    <textarea class="form-control" rows="3" maxlength="50"
+                              placeholder="e.g. Waiting for HR, Referral, Follow up" th:field="*{notes}"></textarea>
                 </div>
                 <div class="d-flex justify-content-end gap-2">
                     <a th:href="@{/}" class="btn btn-secondary px-4">Cancel</a>

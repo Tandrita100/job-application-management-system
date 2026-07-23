@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -36,6 +37,7 @@ public class JobApplication {
     @Enumerated(EnumType.STRING)
     @NotNull(message = "company is required")
     private JobStatus jobStatus;
+    @Size(max=50, message = "Notes can not exceed 50 characters.")
     private String notes;
 
     public JobApplication() {

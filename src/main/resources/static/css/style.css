@@ -13,6 +13,15 @@ h1{
     transition: all 0.3s ease;
 }
 
+th {
+    white-space: nowrap;
+}
+
+.notes-column {
+    min-width: 180px;
+    max-width: 220px;
+}
+
 .card:hover{
     transform: translateY(-2px);
 }

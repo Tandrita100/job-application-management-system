@@ -8,7 +8,7 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<div class="container py-5">
+<div class="container-fluid px-4 py-5">
     <div class="card shadow border-0">
         <div class="card-body p-4">
             <div class="text-center mb-4">
@@ -20,7 +20,7 @@
             </div>
             <div th:if="${not #lists.isEmpty(jobs)}">
                 <div class="table-responsive">
-                    <table class="table table-hover table-striped align middle">
+                    <table class="table table-hover table-striped align-middle">
                         <thead class="table-dark">
                         <tr>
                             <th>Company</th>
@@ -43,7 +43,7 @@
                             <td th:text="${job.location}"></td>
                             <td th:text="${job.appliedDate}"></td>
                             <td th:text="${job.jobStatus}"></td>
-                            <td th:text="${job.notes}"></td>
+                            <td class="notes-column" th:text="${job.notes}"></td>
                             <td class="text-center align-middle">
                                 <a th:href="@{/edit-job/{id}(id=${job.id})}"
                                    class="btn btn-warning btn-sm action-btn me-2">Edit</a>
