@@ -8,7 +8,7 @@ This application helps users organize and manage job applications by allowing th
 
 ## Live Demo
 
-🔗 https://YOUR_RENDER_URL.onrender.com
+🔗 https://job-application-management-system-42ai.onrender.com/
 
 > **Note:** The application is deployed on Render's free tier. If the application has been inactive, the first request may take **30–60 seconds** while the server wakes up.
 
